@@ -27,7 +27,7 @@ PRODUCT_MODEL := Raspberry Pi 4
 include frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.drm.mode.force=1280x720 \
+    debug.drm.mode.force=1280x800 \
     gralloc.drm.kms=/dev/dri/card0 \
     ro.opengles.version=196609 \
     ro.hardware.vulkan=broadcom \
