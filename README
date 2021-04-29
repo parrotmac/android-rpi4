@@ -1,3 +1,7 @@
+[Modified from the android-rpi original to use the automotive specific config]
+
+Read it first : https://github.com/snappautomotive/firmware_rpi-local_manifests
+
 # Setup build envoronment
   https://source.android.com/setup/build/initializing
   $ sudo apt install libssl-dev python3-setuptools 
@@ -12,7 +16,7 @@
  Refer to http://source.android.com/source/building.html
 
   $ source build/envsetup.sh
-  $ lunch rpi4-eng
+  $ lunch snapp_car_rpi4-eng
   $ make ramdisk systemimage vendorimage
 
  Use -j[n] option with make, if build host has a good number of CPU cores.
@@ -21,21 +25,20 @@
 # Prepare sd card
  Partitions of the card should be set-up like followings.
   p1  128MB for boot : Do fdisk, set W95 FAT32(LBA) & Bootable type, mkfs.vfat
-  p2 1024MB for /system : Do fdisk, new primary partition
+  p2 2048MB for /system : Do fdisk, new primary partition
   p3  128MB for /vendor : Do fdisk, new primary partition
   p4 remainings for /data : Do fdisk, mkfs.ext4
  Set volume label of /data partition as userdata
   : use -L option for mkfs.ext4
  
 # Write system & vendor partition
-  $ cd out/target/product/rpi4
+  $ cd out/target/product/rpi
   $ sudo dd if=system.img of=/dev/<p2> bs=1M
   $ sudo dd if=vendor.img of=/dev/<p3> bs=1M
 
 # Copy firmware & ramdisk to boot partition
-  device/arpi/rpi4/boot/* to p1:/
-  out/target/product/rpi4/ramdisk.img to p1:/
-
+  device/snappautomotive/rpi/boot/* to p1:/
+  out/target/product/rpi/ramdisk.img to p1:/
 
 # Download & Build kernel source
   https://github.com/android-rpi/kernel_manifest
