@@ -1,6 +1,6 @@
 [Modified from the android-rpi original to use the automotive specific config]
 
-Read it first : https://github.com/snappautomotive/firmware_rpi-local_manifests
+Read it first : https://github.com/snappautomotive/firmware_rpi-local_manifests/tree/sa-arpi-11
 
 # Build Kernel
   $ sudo apt install gcc-aarch64-linux-gnu libssl-dev bc
