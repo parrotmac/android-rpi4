@@ -14,15 +14,17 @@
 # limitations under the License.
 #
 
+$(call inherit-product, device/google_car/common/pre_google_car.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
-USE_OEM_TV_APP := true
-$(call inherit-product, device/google/atv/products/atv_base.mk)
+$(call inherit-product, packages/services/Car/car_product/build/car.mk)
+$(call inherit-product, device/snappautomotive/common/additions.mk)
+$(call inherit-product, device/google_car/common/post_google_car.mk)
 
-PRODUCT_NAME := rpi4
+PRODUCT_NAME := snapp_car_rpi4
 PRODUCT_DEVICE := rpi4
-PRODUCT_BRAND := arpi
-PRODUCT_MANUFACTURER := ARPi
-PRODUCT_MODEL := Raspberry Pi 4
+PRODUCT_BRAND := SnappAutomotive
+PRODUCT_MANUFACTURER := Snapp Automotive and ARPi
+PRODUCT_MODEL := AAOS on Raspberry Pi 4
 
 include frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk
 
@@ -32,11 +34,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.vulkan=broadcom \
     wifi.interface=wlan0 \
     ro.rfkilldisabled=1
-
-# application packages
-PRODUCT_PACKAGES += \
-    DeskClock \
-    RpLauncher
 
 # overlay packages
 PRODUCT_PACKAGES += \
