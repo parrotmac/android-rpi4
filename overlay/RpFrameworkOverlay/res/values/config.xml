@@ -9,4 +9,7 @@
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
     <integer name="config_longPressOnHomeBehavior">0</integer>
+
+    <!-- Wifi on by default -->
+    <bool name="def_wifi_on">true</bool>
 </resources>
