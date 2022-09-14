@@ -7,7 +7,7 @@ Read it first : https://github.com/snappautomotive/firmware_rpi-local_manifests
   $ sudo apt install libssl-dev python3-setuptools 
 
 # Download Android source
-  https://github.com/android-rpi/local_manifests
+  https://github.com/android-rpi/local_manifests/tree/arpi-12
 
 # Patch the source
   https://github.com/android-rpi/device_arpi_rpi4/wiki/arpi-12-:-framework-patch
@@ -41,7 +41,7 @@ Read it first : https://github.com/snappautomotive/firmware_rpi-local_manifests
   out/target/product/rpi/ramdisk.img to p1:/
 
 # Download & Build kernel source
-  https://github.com/android-rpi/kernel_manifest
+  https://github.com/android-rpi/kernel_manifest/tree/arpi-5.10
 
 # Copy kernel binaries to boot partition
   <kernel directory>/out/arpi-5.10/dist/Image.gz to p1:/
