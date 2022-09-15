@@ -14,11 +14,9 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/google_car/common/pre_google_car.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, packages/services/Car/car_product/build/car.mk)
 $(call inherit-product, device/snappautomotive/common/additions.mk)
-$(call inherit-product, device/google_car/common/post_google_car.mk)
 
 PRODUCT_NAME := snapp_car_rpi4
 PRODUCT_DEVICE := snapp_car_rpi4
