@@ -84,7 +84,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.configstore@1.1-service \
-    android.hardware.tv.cec@1.0-service.mock \
     vndservicemanager
 
 # system configurations
@@ -142,7 +141,6 @@ PRODUCT_COPY_FILES := \
     frameworks/base/data/sounds/effects/ogg/camera_click_48k.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui/camera_click.ogg \
     $(PRODUCT_COPY_FILES)
 
-PRODUCT_AAPT_PREF_CONFIG := tvdpi
-PRODUCT_CHARACTERISTICS := tv
+PRODUCT_CHARACTERISTICS := automotive
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
